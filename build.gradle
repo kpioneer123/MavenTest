@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.novoda:bintray-release:0.3.4'
+        //添加jitpack依赖
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+}
+ext {
+    userOrg = 'pioneer'
+    groupId = 'com.kpioneer.mylibrary2'
+    artifactId = 'haocai-lib2'
+    description = 'haocai libtest'
+    publishVersion = '0.0.1'
+    website = 'https://github.com/kpioneer123'
+    dryRun = 'false'
+    bintrayUser  = 'pioneer'
+    bintrayKey = 'a428d8e5d841b9e31b1ff56f44c3a10c3025d63a'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
